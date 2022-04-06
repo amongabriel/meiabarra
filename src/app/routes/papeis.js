@@ -2,16 +2,16 @@ const PapeisController = require('../controllers/papeis');
 
 module.exports = app => {
   app
-    .route('/papeis')
+    .route('/api/papeis')
     .post(PapeisController.create)
     .put(PapeisController.update)
     .get(PapeisController.findAll);
 
-  app.route('/papeis/data-operacao')
+  app.route('/api/papeis/data-operacao')
     .get(PapeisController.findByDateOperation);
 
   app
-    .route('/papeis/:uuid')
+    .route('/api/papeis/:uuid')
     .get(PapeisController.findOne)
     .delete(PapeisController.del);
 
@@ -36,7 +36,7 @@ module.exports = app => {
 /**
  *
  * Cadastro de novos papeis
- * @route POST /papeis
+ * @route POST /api/papeis
  * @group Papeis 
  * @returns {object} 201 - Cadastro realizado com sucesso.
  * @returns {Error} 422 - Quando os parâmetros não forem informados corretamente
@@ -47,7 +47,7 @@ module.exports = app => {
  */
 /**
  * Atualização de dados dos papeis
- * @route PUT /papeis
+ * @route PUT /api/papeis
  * @group Papeis
  * @returns {object} 201 - Cadastro atualizado com sucesso.
  * @returns {Error} 401 - Falha de autenticação.
@@ -59,7 +59,7 @@ module.exports = app => {
  */
 /**
  * Listagem de papeis por data e operação.
- * @route GET /papeis/data-operacao
+ * @route GET /api/papeis/data-operacao
  * @group Papeis
  * @returns {Array.<Papeis>} 200 - Retorna a lista de papeiss pesquisados.
  * @returns {Error} 401 - Falha de autenticação.
@@ -71,7 +71,7 @@ module.exports = app => {
  */
 /**
  * Listagem de papeis.
- * @route GET /papeis
+ * @route GET /api/papeis
  * @group Papeis
  * @returns {Array.<Papeis>} 200 - Retorna a lista de papeiss pesquisados.
  * @returns {Error} 401 - Falha de autenticação.
@@ -81,7 +81,7 @@ module.exports = app => {
  */
 /**
  * Busca de informações detalhadas de papeis com filtragem pelo seu identificador
- * @route GET /papeis/{uuid}
+ * @route GET /api/papeis/{uuid}
  * @group Papeis
  * @returns {Papeis.model} 200 - Retorna o papeis pesquisado com detalhamento de todas as suas informações.
  * @returns {Error} 401 - Falha de autenticação.
@@ -92,7 +92,7 @@ module.exports = app => {
  */
 /**
  * Exclusão de Papeiss
- * @route DELETE /papeis/{uuid}
+ * @route DELETE /api/papeis/{uuid}
  * @group Papeis - Reúne todas as interações relacionadas aos papeiss MercadoBot
  * @returns {Object} 204 - Retorna a confirmação da exclusão.
  * @returns {Error} 404 - Quando o papeis não for encontrado.

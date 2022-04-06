@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const PORT = process.env.PORT || 3000;
+const URL = process.env.URL || 'localhost';
 
 let options = {
   swaggerDefinition: {
@@ -9,7 +10,7 @@ let options = {
       title: 'MercadoBot - API base',
       version: '1.0.0',
     },
-    host: 'localhost:5000',
+    host: URL + ':' + PORT,
     basePath: '/',
     produces: [
       "application/json"
