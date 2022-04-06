@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const PORT = process.env.PORT || 3000;
-const SWEGGER_PORT = process.env.SWEGGER_PORT || PORT;
+const SWAGGER_URL = process.env.SWAGGER_URL;
 const URL = process.env.URL || 'localhost';
 
 let options = {
@@ -11,7 +11,7 @@ let options = {
       title: 'MercadoBot - API base',
       version: '1.0.0',
     },
-    host: URL + ':' + SWEGGER_PORT,
+    host: SWAGGER_URL || URL + ':' + PORT,
     basePath: '/',
     produces: [
       "application/json"
