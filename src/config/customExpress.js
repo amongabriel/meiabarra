@@ -7,8 +7,8 @@ const URL = process.env.URL || 'localhost';
 let options = {
   swaggerDefinition: {
     info: {
-      description: 'Esta é a API base para interação com a MercadoBot.',
-      title: 'MercadoBot - API base',
+      description: 'Esta é a API base para interação com o robô Meia Barra.',
+      title: 'Meia Barra - API base',
       version: '1.0.0',
     },
     host: SWAGGER_URL || URL + ':' + PORT,
