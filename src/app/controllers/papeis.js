@@ -83,8 +83,13 @@ module.exports = {
   del: async (req, res) => {
     const papeis = await Papeis.findByUuid(req.params.uuid);
     try {
-      await papeis.del();
-      res.status(204).send();
+      if (!papeis) {
+        res.status(404).send();
+      }
+      else {
+        await papeis.del();
+        res.status(204).send();
+      }
     } catch (error) {
       res.status(500).json({ error: error });
     }

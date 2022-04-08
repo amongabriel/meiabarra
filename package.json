@@ -20,12 +20,13 @@
     "express-swagger-generator": "^1.1.17",
     "faunadb": "^4.5.4",
     "jsonwebtoken": "^8.5.1",
-    "knex": "^0.21.6",
-    "mysql": "^2.18.1",
+    "knex": "^0.21.2",
+    "mysql2": "^2.3.3",
     "passport": "^0.4.1",
     "passport-http-bearer": "^1.0.1",
     "passport-local": "^1.0.0",
-    "sqlite3": "^5.0.0",
+    "pg": "^8.7.3",
+    "sqlite3": "^5.0.2",
     "uuid": "^8.3.0"
   },
   "devDependencies": {
