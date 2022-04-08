@@ -14,6 +14,7 @@ module.exports = {
 
       return result;
     } catch (error) {
+      console.log(error)
       throw new InternalServerError("Erro durante inserção dos dados no banco de dados")
     }
   },
