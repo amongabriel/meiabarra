@@ -39,7 +39,8 @@ class Papeis {
     if (!await Papeis.findByUuid(this.uuid)) {
       throw new InvalidArgumentError('uuid não encontrado!');
     }
-    if (await Papeis.findByDateOperation(this.data, this.operacao)) {
+    const papeis = await Papeis.findByDateOperation(this.data, this.operacao);
+    if (papeis.uuid !== this.uuid) {
       throw new InvalidArgumentError(`Já existe operaçao de ${this.operacao} para a data ${this.data} no sistema!`);
     }
     papeisDao.update(this);
